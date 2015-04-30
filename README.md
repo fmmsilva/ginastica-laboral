@@ -1,4 +1,5 @@
-# ginastica-laboral
+# ginastica-laboral [![Build status](https://ci.appveyor.com/api/projects/status/3i5rkpmu9cbkgg3o/branch/master?svg=true)](https://ci.appveyor.com/project/fmmsilva/ginastica-laboral/branch/master)
+
 Aplicação para exibição da campanha de Ginástica Laboral
 
 ## Como configurar os slides?
