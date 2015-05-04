@@ -83,11 +83,15 @@ namespace GinasticaLaboral
             {
                 using (var softwareKey = rk.CreateSubKey("Software"))
                 {
+                    /*
                     using (var trtesKey = softwareKey.CreateSubKey("TRT-ES"))
                     {
                         var key = trtesKey.CreateSubKey("GinasticaLaboral");
                         return key;
                     }
+                     * */
+                    var key = softwareKey.CreateSubKey("GinasticaLaboral");
+                    return key;
                 }
             }
         }
