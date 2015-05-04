@@ -84,7 +84,7 @@ namespace GinasticaLaboral
                 this.slides = System.IO.Directory.GetFiles(slidesPath, "slide.*.jpg", System.IO.SearchOption.TopDirectoryOnly).OrderBy(file => file).Select(file => Image.FromFile(file));
                 //this.inicioImage = slides.First();
                 this.imagensCarregadas = this.slides.Count() > 0;
-                return true;
+                return this.imagensCarregadas;
             }
             catch (Exception ex)
             {
