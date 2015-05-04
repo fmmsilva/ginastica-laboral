@@ -12,7 +12,7 @@ namespace GinasticaLaboral
     class SlideForm : Form
     {
 
-        protected static string basePath = @"c:\temp"; //AssemblyDirectory;
+        protected static string basePath = AssemblyDirectory;
 
         protected int slideIndex = -1;
         //protected Image inicioImage = null;
@@ -71,8 +71,9 @@ namespace GinasticaLaboral
         {
             try
             {
-                this.closeImage = Image.FromFile(string.Format(@"{0}\close.png", basePath));
-                this.closeImageHover = Image.FromFile(string.Format(@"{0}\close-hover.png", basePath));
+                string imagesPath = string.Format(@"{0}\images", basePath);
+                this.closeImage = Image.FromFile(string.Format(@"{0}\close.png", imagesPath));
+                this.closeImageHover = Image.FromFile(string.Format(@"{0}\close-hover.png", imagesPath));
 
                 string slidesPath = string.Format(@"{0}\slides", basePath);
                 //this.inicioImage = Image.FromFile(string.Format(@"{0}\inicio.jpg", slidesPath));
@@ -95,10 +96,6 @@ namespace GinasticaLaboral
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
 
-            /*
-            int imageWidth = inicioImage.Width;
-            int imageHeight = inicioImage.Height;
-             * */
             int imageWidth = this.slides.First().Width;
             int imageHeight = this.slides.First().Height;
 
