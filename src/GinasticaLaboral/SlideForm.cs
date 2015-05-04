@@ -13,7 +13,7 @@ namespace GinasticaLaboral
     {
 
         protected static string basePath = AssemblyDirectory;
-
+        protected bool imagensCarregadas = false;
         protected int slideIndex = -1;
         //protected Image inicioImage = null;
         //protected Image fimImage = null;
@@ -64,7 +64,10 @@ namespace GinasticaLaboral
 
         void form_Click(object sender, EventArgs e)
         {
-            this.proximoSlide();
+            if (this.imagensCarregadas)
+            {
+                this.proximoSlide();
+            }
         }
 
         private bool carregarImagens()
@@ -80,6 +83,7 @@ namespace GinasticaLaboral
                 //this.fimImage = Image.FromFile(string.Format(@"{0}\inicio.jpg", slidesPath));
                 this.slides = System.IO.Directory.GetFiles(slidesPath, "slide.*.jpg", System.IO.SearchOption.TopDirectoryOnly).OrderBy(file => file).Select(file => Image.FromFile(file));
                 //this.inicioImage = slides.First();
+                this.imagensCarregadas = true;
                 return true;
             }
             catch (Exception ex)
@@ -158,14 +162,19 @@ namespace GinasticaLaboral
                 this.Close();
             }
             else
-                if (this.pressionouTeclaParaAvancar(e))
+            {
+                if (this.imagensCarregadas)
                 {
-                    this.proximoSlide();
+                    if (this.pressionouTeclaParaAvancar(e))
+                    {
+                        this.proximoSlide();
+                    }
+                    else if (this.pressionouTeclaParaRecuar(e))
+                    {
+                        this.slideAnterior();
+                    }
                 }
-                else if (this.pressionouTeclaParaRecuar(e))
-                {
-                    this.slideAnterior();
-                }
+            }
         }
 
         private bool pressionouTeclaParaFechar(KeyEventArgs e)
