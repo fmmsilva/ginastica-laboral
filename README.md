@@ -2,13 +2,18 @@
 
 Aplicação para exibição da campanha de Ginástica Laboral
 
-## Como configurar os slides?
+## Configurações iniciais
 Crie uma subpasta "slides" dentro da pasta do aplicativo e nomeie os arquivos na sequência:
 - slide.00.jpg
 - slide.01.jpg
 - slide.02.jpg
 - ...
 - slide.99.jpg
+
+Crie uma subpasta "images" dentro da pasta do aplicativo e inclua os seguintes arquivos:
+- close.png
+- close-hover.png
+
 
 ## Como configurar os horários de exibição da campanha?
 Os horários de exibição da campanha podem ser configurados atravês do arquivo ***GinasticaLaboral.exe.config*** que deve seguir o padrão abaixo:
