@@ -25,8 +25,14 @@ namespace GinasticaLaboral.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" />")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>08:30</string>
+  <string>11:30</string>
+  <string>12:30</string>
+  <string>15:30</string>
+  <string>18:30</string>
+</ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection Horarios {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["Horarios"]));
